@@ -16,6 +16,7 @@ kramdown:
   input: GFM
 lsi: true
 permalink: pretty
+
 exclude: [
   "bower.json",
   "node_modules",
@@ -24,6 +25,11 @@ exclude: [
   "README.md",
   "Gemfile",
   "Gemfile.lock"
+]
+
+keep_files: [
+  "css/",
+  "scripts/"
 ]
 
 defaults:
