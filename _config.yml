@@ -1,0 +1,34 @@
+title: "Speedster"
+description: "Native Internet speed testing for OS X."
+tagline: "Elegant Internet Speed Testing for OS X"
+keywords: [osx, mac, internet, speedtest, ookla, speedofme, testspeed]
+author:
+  name: "Reda Lemeden"
+source: source
+baseurl: ""
+url: https://speedster.kaishin.co
+future: false
+show_drafts: false
+limit_posts: 0
+
+markdown: kramdown
+kramdown:
+  input: GFM
+lsi: true
+permalink: pretty
+exclude: [
+  "bower.json",
+  "node_modules",
+  "gulpfile.js",
+  "package.json",
+  "README.md",
+  "Gemfile",
+  "Gemfile.lock"
+]
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
