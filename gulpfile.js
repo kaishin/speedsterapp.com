@@ -17,14 +17,14 @@ messages = {
 }
 
 sourceFolder = "./source"
-destinationFolder = "./_site"
+targetFolder = "./_site"
 
 paths = {
-  sass: sourceFolder + "/_scss/",
+  sourceStylesheets: sourceFolder + "/_scss/",
   sourceScripts: sourceFolder + "/_scripts/",
-  styles: destinationFolder + "/css/",
-  scripts: destinationFolder + "/scripts/",
-  jekyllFiles: [sourceFolder + "/**/*.html", sourceFolder + "/**/*.md", sourceFolder + "/**/*.yml", sourceFolder + "/**/*.xml", "!" + sourceFolder + "/node_modules/**/*", "!" + destinationFolder + "/**/*"]
+  targetStylesheets: targetFolder + "/css/",
+  targetScripts: targetFolder + "/scripts/",
+  jekyllFiles: [sourceFolder + "/**/*.html", sourceFolder + "/**/*.md", sourceFolder + "/**/*.yml", sourceFolder + "/**/*.xml", "!" + sourceFolder + "/node_modules/**/*", "!" + targetFolder + "/**/*"]
 }
 
 gulp.task("default", ["develop"])
@@ -34,7 +34,7 @@ gulp.task("develop", function() {
 })
 
 gulp.task("build", function() {
-  runSequence(["sass", "minify-scripts", "vendorize-scripts"], "lint-scss", "jekyll-build")
+  runSequence(["generate-css", "minify-scripts", "vendorize-scripts"], "lint-scss", "jekyll-build")
 })
 
 gulp.task("rebuild", function() {
@@ -43,18 +43,18 @@ gulp.task("rebuild", function() {
 
 gulp.task("clean", del.bind(null, ["_site"]))
 
-gulp.task("watch", ["sass", "minify-scripts", "jekyll-build-local"], function() {
-  gulp.watch(paths.sass + "/**/*.scss", ["sass"])
+gulp.task("watch", ["generate-css", "minify-scripts", "jekyll-build-local"], function() {
+  gulp.watch(paths.sourceStylesheets + "/**/*.scss", ["generate-css"])
   gulp.watch(paths.sourceScripts + "/**/*.js", ["minify-scripts"])
   gulp.watch(paths.sourceScripts + "/vendor.js", ["vendorize-scripts"])
   gulp.watch(paths.jekyllFiles, ["rebuild"])
 })
 
-gulp.task("jekyll-build-local", shell.task("bundle exec jekyll build --config _config.yml,_config.serve.yml", {
+gulp.task("jekyll-build-local", shell.task("bundle exec jekyll build --incremental --config _config.yml,_config.serve.yml", {
   quiet: true
 }))
 
-gulp.task("jekyll-build", shell.task("bundle exec jekyll build"))
+gulp.task("jekyll-build", shell.task("bundle exec jekyll build --incremental"))
 
 gulp.task("reload", function() {
   browserSync.reload()
@@ -62,8 +62,8 @@ gulp.task("reload", function() {
 
 gulp.task("doctor", shell.task("jekyll doctor"))
 
-gulp.task("sass", function() {
-  gulp.src(paths.sass + "/*.scss")
+gulp.task("generate-css", function() {
+  gulp.src(paths.sourceStylesheets + "/*.scss")
   .pipe(sass({
     errLogToConsole: true,
     precision: 2
@@ -71,17 +71,17 @@ gulp.task("sass", function() {
   .pipe(prefix(["last 2 versions", "> 2%", "ie 11", "Firefox ESR"], {
     cascade: false
   }))
-  .pipe(cache(paths.styles))
+  .pipe(cache(paths.targetStylesheets))
   .pipe(minifyCSS())
-  .pipe(gulp.dest(paths.styles))
+  .pipe(gulp.dest(paths.targetStylesheets))
   .pipe(browserSync.reload({
     stream: true
   }))
 })
 
 gulp.task("lint-scss", function() {
-  gulp.src(paths.sass + "/*.scss")
-  .pipe(cache(paths.sass))
+  gulp.src(paths.sourceStylesheets + "/*.scss")
+  .pipe(cache(paths.sourceStylesheets))
   .pipe(scssLint({
     "config": ".scss-lint.yml",
     "bundleExec": true
@@ -94,7 +94,7 @@ gulp.task("minify-scripts", function() {
   gulp.src([paths.sourceScripts + "/*.js", "!" + paths.sourceScripts + "/vendor.js"])
   .pipe(cache("minify-scripts"))
   .pipe(minifyJS())
-  .pipe(gulp.dest(paths.scripts))
+  .pipe(gulp.dest(paths.targetScripts))
   .pipe(browserSync.reload({
     stream: true
   }))
@@ -106,7 +106,7 @@ gulp.task("vendorize-scripts", function() {
   .on("error", function(error) { gutil.log(error.message) })
   .pipe(cache("vendorize-scripts"))
   .pipe(minifyJS())
-  .pipe(gulp.dest(paths.scripts))
+  .pipe(gulp.dest(paths.targetScripts))
   .pipe(browserSync.reload({
     stream: true
   }))
@@ -115,7 +115,7 @@ gulp.task("vendorize-scripts", function() {
 gulp.task("browser-sync", function() {
   browserSync.init(null, {
     server: {
-      baseDir: destinationFolder
+      baseDir: targetFolder
     },
     host: "localhost",
     port: 4000
