@@ -24,7 +24,7 @@ paths = {
   sourceScripts: sourceFolder + "/_scripts/",
   targetStylesheets: targetFolder + "/css/",
   targetScripts: targetFolder + "/scripts/",
-  jekyllFiles: [sourceFolder + "/**/*.html", sourceFolder + "/**/*.md", sourceFolder + "/**/*.yml", sourceFolder + "/**/*.xml", "!" + sourceFolder + "/node_modules/**/*", "!" + targetFolder + "/**/*"]
+  jekyllFiles: [sourceFolder + "/**/*.html", sourceFolder + "/**/*.md", sourceFolder + "/**/*.yml", sourceFolder + "/**/*.xml", "!" + sourceFolder + "/node_modules/**/*"]
 }
 
 gulp.task("default", ["develop"])
@@ -65,9 +65,9 @@ gulp.task("doctor", shell.task("jekyll doctor"))
 gulp.task("generate-css", function() {
   gulp.src(paths.sourceStylesheets + "/*.scss")
   .pipe(sass({
-    errLogToConsole: true,
     precision: 2
   }))
+  .on("error", sass.logError)
   .pipe(prefix(["last 2 versions", "> 2%", "ie 11", "Firefox ESR"], {
     cascade: false
   }))

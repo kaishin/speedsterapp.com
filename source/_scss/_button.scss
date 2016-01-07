@@ -1,0 +1,55 @@
+@function color-is-light($hex-color) {
+  $red: red(rgba($hex-color, 1));
+  $green: green(rgba($hex-color, 1));
+  $blue: blue(rgba($hex-color, 1));
+
+  $lightness: ($red * 0.2126 + $green * 0.7152 + $blue * 0.0722) / 255;
+
+  @return $lightness > 0.6;
+}
+
+@mixin button($color: #eee) {
+  background-color: $color;
+  color: if(color-is-light($color), darken($color, 20%), #fff);
+  border: none;
+
+  @include button-alternate-states($color);
+}
+
+@mixin button-alternate-states($color: #eee) {
+  &:hover,
+  &:focus {
+    background-color: if(color-is-light($color), darken($color, 10%), lighten($color, 10%));
+  }
+
+  &:active {
+    background-color: if(color-is-light($color), darken($color, 15%), lighten($color, 15%));
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+%button {
+  appearance: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  user-select: none;
+  vertical-align: middle;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}

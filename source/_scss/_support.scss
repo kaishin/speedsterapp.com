@@ -1,0 +1,97 @@
+form {
+  padding: 2rem 1rem;
+}
+
+input,
+label,
+select {
+  display: block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+
+  &.required::after {
+    content: "*";
+  }
+
+  abbr {
+    display: none;
+  }
+}
+
+[type=email],
+[type=text],
+[multiple=multiple],
+textarea {
+  background-color: $background-color;
+  border-radius: $base-border-radius * 2;
+  border: $base-border;
+  box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+  color: $white;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  margin-bottom: $base-spacing / 2;
+  padding: $base-spacing / 2;
+  transition: border-color;
+  width: 100%;
+
+  &:hover {
+    border-color: darken($base-border-color, 10%);
+  }
+
+  &:focus {
+    border-color: $action-color;
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: lighten($background-color, 20%);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+[type="search"] {
+  appearance: none;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+}
+
+[type="file"] {
+  padding-bottom: $small-spacing;
+  width: 100%;
+}
+
+select {
+  margin-bottom: $base-spacing;
+  max-width: 100%;
+  width: auto;
+}
+
+.support-form {
+  margin: auto;
+  max-width: 400px;
+}
+
+[type=submit] {
+  @extend %button;
+  @include button($blue);
+  border-radius: 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  width: 100%;
+}

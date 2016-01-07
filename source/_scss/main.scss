@@ -1,4 +1,132 @@
 @import "vendor";
+@import "variables";
+@import "button";
+@import "support";
 
 body {
+  background-color: $background-color;
+  color: lighten($background-color, 40%);
+  font-family: $base-font-family;
 }
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $orange;
+}
+
+%container {
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 0 1rem;
+}
+
+header {
+  @extend %container;
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.icon {
+  display: block;
+  margin: 0 auto;
+  max-width: 120px;
+}
+
+.logo {
+  min-width: 210px;
+}
+
+.screenshot {
+  border-radius: 10px;
+  margin-top: 1em;
+}
+
+.main-title {
+  font-size: 3em;
+  font-weight: 300;
+  text-align: center;
+
+  .description {
+    color: lighten($background-color, 30%);
+    letter-spacing: 0.04em;
+  }
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 0.2em;
+
+  @include media-width(until, 320px) {
+    font-size: 0.8rem;
+  }
+}
+
+main {
+  @extend %container;
+
+  .description {
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 500px;
+    padding-bottom: 2rem;
+    position: relative;
+    text-align: center;
+
+    em {
+      text-decoration: underline;
+    }
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    display: block;
+    height: 1px;
+    margin-bottom: 3rem;
+  }
+}
+
+.download-button {
+  display: block;
+  margin-bottom: 2em;
+  text-align: center;
+
+  img {
+    max-width: 80%;
+    min-width: 250px;
+  }
+}
+
+footer {
+  $padding: 1.8rem;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.4;
+  padding-bottom: $padding;
+  padding-top: $padding;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    @include size(200px, 1px);
+    background-color: lighten($background-color, 10%);
+    content: "";
+    display: block;
+    margin: 0 auto 2rem;
+  }
+
+  .copyright {
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+  }
+
+  a {
+    font-style: italic;
+  }
+}
+
