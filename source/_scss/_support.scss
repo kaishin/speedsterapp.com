@@ -94,3 +94,12 @@ select {
   font-weight: 500;
   width: 100%;
 }
+
+.button {
+  @extend [type=submit];
+  display: inline-block;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  text-align: center;
+  width: auto;
+}

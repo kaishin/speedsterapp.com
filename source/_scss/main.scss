@@ -36,6 +36,18 @@ h2 {
   padding: 2rem 0 0.5rem;
 }
 
+h3,
+h4,
+h5 {
+  font-weight: 400;
+}
+
+ul {
+  list-style: circle;
+  margin: 0;
+  padding: 0;
+}
+
 %container {
   margin: 0 auto;
   max-width: 40rem;
@@ -121,7 +133,7 @@ footer {
   display: block;
   font-size: 0.9rem;
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.6;
   padding-bottom: $padding;
   padding-top: $padding;
   position: relative;
