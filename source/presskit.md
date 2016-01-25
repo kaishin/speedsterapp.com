@@ -29,6 +29,8 @@ layout: default
 ### Contact
 
 - [Website]({{ presskit.website }})
+- [FAQ]({{ presskit.faq_url }})
+- [App Store]({{ presskit.appstore_url }})
 - [Twitter](https://twitter.com/{{ presskit.twitter }})
 - [Email](mailto:{{ presskit.email }})
 
