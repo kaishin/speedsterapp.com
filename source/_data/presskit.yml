@@ -14,7 +14,8 @@ features: [
 roadmap: [
   "Light theme.",
   "Test logs with graphs.",
-  "Data export."
+  "Data export.",
+  "Test accuracy settings."
 ]
 website: "https://speedsterapp.com"
 twitter: "speedsterapp"
