@@ -9,6 +9,7 @@ layout: default
   Make <em>3 tests/day for free</em> and only upgrade if/when you need more.
 </div>
 
-<a class="download-button" href="https://itunes.apple.com/us/app/ipinator/id959111981">
+
+<a class="download-button" href="{{ site.data.presskit.appstore_url }}">
   <img src="/images/appstore.svg" alt="">
 </a>
