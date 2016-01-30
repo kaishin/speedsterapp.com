@@ -6,7 +6,8 @@ author:
   name: "Reda Lemeden"
 source: source
 baseurl: ""
-url: https://speedster.kaishin.co
+url: https://speedsterapp.com
+domain: speedsterapp.com
 future: false
 show_drafts: false
 limit_posts: 0
