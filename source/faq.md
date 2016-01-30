@@ -6,7 +6,7 @@ layout: default
 
 If your question is not answered below, feel free to [get in touch](/support).
 
-## Why are the results slower than other speed testing services?
+## Why are the results often slower than other speed testing services?
 
 Currently, Speedster uses the SpeedOf.Me API which, unlike other services, downloads large contiguous sample files, similar to what usually happens when downloading a webpage or media. This is while other speed test services download small chunks in parallel and do heavy adjustments to calculate your approximate speed.
 
