@@ -124,8 +124,8 @@ gulp.task("browser-sync", function() {
 })
 
 gulp.task("deploy", function() {
-  gulp.src(targetFolder + "/**/*")
+  gulp.src([targetFolder + "/**/*.*", targetFolder + "/CNAME"])
   .pipe(ghPages({
-    message: "Deploy [timestamp]"
+    message: "Deploy // " + Date()
   }))
 })
