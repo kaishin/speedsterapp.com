@@ -19,20 +19,20 @@ a {
 
 hr {
   border: none;
-  border-top: 1px solid lighten($background-color, 10%);;
+  border-top: 1px solid lighten($background-color, 10%);
   display: block;
   height: 1px;
   margin-bottom: 3rem;
 }
 
 h1 {
-  font-weight: 500;
   font-size: 1.5rem;
+  font-weight: 500;
 }
 
 h2 {
-  font-weight: 500;
   font-size: 1.2rem;
+  font-weight: 500;
   padding: 1rem 0 0.5rem;
 }
 
@@ -110,10 +110,10 @@ main {
     padding-bottom: 2rem;
     position: relative;
     text-align: center;
+  }
 
-    em {
-      text-decoration: underline;
-    }
+  em {
+    text-decoration: underline;
   }
 }
 

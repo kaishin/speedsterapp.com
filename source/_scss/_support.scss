@@ -28,9 +28,9 @@ label {
 [multiple=multiple],
 textarea {
   background-color: lighten($background-color, 3%);
+  border: 2px solid darken($base-border-color, 5%);
   border-radius: $base-border-radius * 2;
   box-sizing: border-box;
-  border: 2px solid darken($base-border-color, 5%);
   color: $white;
   font-family: $base-font-family;
   font-size: $base-font-size;

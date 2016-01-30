@@ -8,15 +8,15 @@
   @return $lightness > 0.6;
 }
 
-@mixin button($color: #eee) {
+@mixin button($color: $gallery) {
   background-color: $color;
-  color: if(color-is-light($color), darken($color, 20%), #fff);
+  color: if(color-is-light($color), darken($color, 20%), $white);
   border: none;
 
   @include button-alternate-states($color);
 }
 
-@mixin button-alternate-states($color: #eee) {
+@mixin button-alternate-states($color: $gallery) {
   &:hover,
   &:focus {
     background-color: if(color-is-light($color), darken($color, 10%), lighten($color, 10%));
