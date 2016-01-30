@@ -2,6 +2,7 @@
 layout: webview
 title: Test Webview
 analytics: true
+sitemap: false
 ---
 
 <script type="text/javascript">

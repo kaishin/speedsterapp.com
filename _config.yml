@@ -11,6 +11,8 @@ domain: speedsterapp.com
 future: false
 show_drafts: false
 limit_posts: 0
+gems:
+  - jekyll-sitemap
 
 markdown: kramdown
 kramdown:

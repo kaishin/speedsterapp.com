@@ -1,6 +1,7 @@
 ---
 layout: webview
 title: Fake Test Webview
+sitemap: false
 ---
 
 <script type="text/javascript">
