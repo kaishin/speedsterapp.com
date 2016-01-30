@@ -1,6 +1,7 @@
 browserSync = require("browser-sync")
 cache = require("gulp-cached")
 del = require("del")
+ghPages = require("gulp-gh-pages")
 gulp = require("gulp")
 gutil = require("gulp-util")
 include = require("gulp-include")
@@ -120,4 +121,11 @@ gulp.task("browser-sync", function() {
     host: "localhost",
     port: 4000
   })
+})
+
+gulp.task("deploy", function() {
+  gulp.src(targetFolder + "/**/*")
+  .pipe(ghPages({
+    message: "Deploy [timestamp]"
+  }))
 })
