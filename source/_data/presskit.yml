@@ -1,0 +1,25 @@
+name:
+  Speedster
+description:
+  Native Internet speed testing utility for OS X.
+features: [
+  "100% native UI.",
+  "Accurate and realistic download/upload speed tests using SpeedOf.Me API.",
+  "No browser or plugins required.",
+  "Ad-free. Forever.",
+  "Share results as text or image using the customizeable OS X share menu.",
+  "Get 7 tests per week for free.",
+  "Buy additional test packs as needed."
+]
+roadmap: [
+  "Light theme.",
+  "Test logs with graphs.",
+  "Data export.",
+  "Test accuracy settings."
+]
+website: "https://speedsterapp.com"
+twitter: "speedsterapp"
+email: "speedster@kaishin.co"
+assets_url: "https://github.com/kaishin/speedsterapp.com/releases/download/v1.0.0/speedster-assets.zip"
+appstore_url: "https://itunes.apple.com/app/speedster/id1061477954"
+faq_url: "https://speedsterapp.com/faq"
