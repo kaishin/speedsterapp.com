@@ -2,7 +2,7 @@
 layout: default
 ---
 
-***
+<hr>
 
 # Privacy Policy
 
@@ -23,6 +23,8 @@ When you use the *Application*, the following *Non Personal Information* is coll
 - Public IP address and ISP info using a [public geocoding API](http://ip-api.com). This information is used to sort test results by IP address.
 
 This information is kept local and is never transmitted to third parties outside the scope of the communication with the the external APIs.
+
+A Mac App Store receipt is sent to a remote server for validation. This is to ensure that the user is using an authentic copy of the app.
 
 Additionally, the provider the *Application* interfaces with ([SpeedOfMe](https://speedof.me))) may collect additional *Non Personal Information* including app launches and timestamps of the tests performed. Refer to the [provider's privacy policy](http://speedof.me/privacy.html) for more details.
 
