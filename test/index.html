@@ -5,10 +5,88 @@
   </head>
   <body>
     <script type="text/javascript">
-  webkit.messageHandlers.showAlertHandler.postMessage({
-    "alertTitle": "Update Required",
-    "alertMessage": "Speedster has migrated to a new server and business model. Please install the 2.0 update (free) to continue using the app. All your purchases will remain intact."
-  })
+  var accountKey, sustainTime, webkit
+
+  if (webkit == undefined) {
+    alert("This page is a wrapper around the SpeedOfMe API. Nothing to see here.")
+    throw "Unauthorized Usage"
+  }
+
+  if (bundleVersion < 300) {
+    webkit.messageHandlers.showAlertHandler.postMessage({
+      "alertTitle": "Update Required",
+      "alertMessage": "You need the latest version from the App Store (2.0) to continue using Speedster. Please contact support if you have any questions."
+    })
+  } else {
+    webkit.messageHandlers.pageLoadedHandler.postMessage("Test page loaded.")
+  }
+
+  SomApi.account = accountKey
+  SomApi.domainName = "speedsterapp.com"
+  SomApi.config.sustainTime = sustainTime
+  SomApi.config.testServerEnabled = true
+  SomApi.config.userInfoEnabled = false
+  SomApi.config.latencyTestEnabled = true
+
+  SomApi.config.progress = {
+    enabled: true,
+    verbose: true
+  }
+
+  SomApi.onTestCompleted = onTestCompleted;
+  SomApi.onError = onError;
+  SomApi.onProgress = onProgress
+
+  progressInterval = 300
+  timeLatestDownloadProgressSent = 0
+  unsentDownloadProgressValues = []
+  timeLatestUploadProgressSent = 0
+  unsentUploadProgressValues = []
+
+  function start() {
+    SomApi.startTest()
+    webkit.messageHandlers.testStartHandler.postMessage("Speed test in progress. Please wait...")
+  }
+
+  function onProgress(progress) {
+    now = new Date().getTime()
+
+    if (progress.type == "latency") {
+      webkit.messageHandlers.onProgressHandler.postMessage(progress)
+    } else if (progress.type == "download") {
+      delta = now - timeLatestDownloadProgressSent
+      unsentDownloadProgressValues.push(progress.currentSpeed)
+
+      if (delta > progressInterval) {
+        progress.currentSpeed = Array.max(unsentDownloadProgressValues)
+        timeLatestDownloadProgressSent = now
+        unsentDownloadProgressValues = []
+        webkit.messageHandlers.onProgressHandler.postMessage(progress)
+      }
+    } else {
+      delta = now - timeLatestUploadProgressSent
+      unsentUploadProgressValues.push(progress.currentSpeed)
+
+      if (delta > progressInterval) {
+        progress.currentSpeed = Array.max(unsentUploadProgressValues)
+        timeLatestUploadProgressSent = now
+        unsentUploadProgressValues = []
+        webkit.messageHandlers.onProgressHandler.postMessage(progress)
+      }
+    }
+  }
+
+  function onTestCompleted(testResult) {
+    webkit.messageHandlers.onCompletionHandler.postMessage(testResult)
+  }
+
+  function onError(error) {
+    webkit.messageHandlers.onErrorHandler.postMessage(error)
+  }
+
+  Array.max = function(array) {
+    return Math.max.apply(Math, array)
+  }
 </script>
 
 
