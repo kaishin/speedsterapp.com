@@ -22,14 +22,25 @@ No. You can use Speedster by purchasing consumable test packs. However it's pref
 
 ## How do I get a SpeedOfMe API key?
 
-While Speedster is not affiliated with SpeedOfMe, here is how you can get your key as it stands now:
+To use your own API key, you need:
 
-1. Head to the SpeedOfMe [plans and pricing page](http://SpeedOfMe/api-plans.html). There is a free trial in case you are not ready to commit yet.
+- A [SpeedOfMe](http://speedof.me) API key (not affiliated with Speedster).
+- A test page hosted in a unique domain associated to your key.
+
+The next two sections will detail each requirement.
+
+### Getting a SpeedOfMe API key
+
+1. Head to the SpeedOfMe [plans and pricing page](http://speedof.me/api-plans.html). There is a **free trial** in case you are not ready to subscribe yet.
 2. Click "Start Free Trial" on the plan that you are interested in. Pick with "Developer" if unsure.
-3. In the sign up page, enter your personal details. Leave *Domain* for now.
-4. Enter `speedsterapp.nfshost.com` in the *Domain* field. ⚠️ This is an important step if you want to use your key with Speedster.
-5. Validate your email.
-6. Done. You should be able to copy your API key and track your usage.
+3. In the sign up page, enter your personal details. Enter `speedsterapp.nfshost.com` in the *Domain* field for now.
+4. Validate your email.
+
+### Getting a unique test page domain
+
+1. Head to the [speedster-test-page](https://github.com/kaishin/speedster-test-page) repository.
+2. Follow the setup instructions in the [README](https://github.com/kaishin/speedster-test-page/blob/gh-pages/README.md).
+3. Update the *Domain* field in both SpeedOfMe and Speedter. See the [README](https://github.com/kaishin/speedster-test-page/blob/gh-pages/README.md) for more details.
 
 <hr>
 
