@@ -18,15 +18,9 @@ The *Application* follows all legal requirements to protect your privacy. Our Pr
 
 You are not required to provide the *Application* with any *Personally Identifiable Information* as a user.
 
-When you use the *Application*, the following *Non Personal Information* is collected:
+The following information may be stored on the third party servers where it's collected from:
 
-- Public IP address and ISP info using a [public geocoding API](http://ip-api.com). This information is used to sort test results by IP address.
-
-This information is kept local and is never transmitted to third parties outside the scope of the communication with the the external APIs.
-
-A Mac App Store receipt is sent to a remote server for validation. This is to ensure that the user is using an authentic copy of the app.
-
-Additionally, the provider the *Application* interfaces with ([SpeedOfMe](https://speedof.me))) may collect additional *Non Personal Information* including app launches and timestamps of the tests performed. Refer to the [provider's privacy policy](http://speedof.me/privacy.html) for more details.
+- Public IP address and ISP information is obtained by pinging a third-party server.
 
 ## 2. Does the Application collect location information of the device?
 
@@ -38,7 +32,7 @@ The *Application* does not share any *Personally Identifiable Information* with 
 
 ## 4. What are my opt-out rights?
 
-You can stop the collection of *Non Personal Information* by the *Application* easily by uninstalling the *Application*. You may use the standard uninstall processes as may be available as part of your system. If you wish the IP information data that was collected on your behalf to be deleted from the public API servers, please contact support with the IP address in question and we will do our best to fulfill your request.
+You can stop the collection of *Non Personal Information* by the *Application* easily by uninstalling the *Application*. You may use the standard uninstall processes as may be available as part of your system.
 
 ## 5. Data Retention Policy
 

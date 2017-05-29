@@ -1,6 +1,6 @@
 title: "Speedster"
-description: "Native Internet Speed Testing for OS X"
-tagline: "Native Internet Speed Testing for OS X"
+description: "A speed testing Mac app that doesn't collect your data"
+tagline: "A speed testing Mac app that doesn't collect your test data"
 keywords: [osx, mac, internet, speedtest, ookla, speedofme, testspeed]
 author:
   name: "Reda Lemeden"

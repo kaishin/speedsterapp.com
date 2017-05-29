@@ -2,17 +2,18 @@
 layout: default
 ---
 
-<img class="screenshot" src="/images/screenshot.jpg" alt="A screenshot of Speedster">
+<p class="main-container">
+  <img class="screenshot" src="/images/screenshot.jpg" alt="A screenshot of Speedster">
+</p>
 
 <div class="description">
-  Test your Internet speed natively on OS X El Capitan without having to enable Flash or see annoying ads.
-  Make <em>1 test/day for free</em> and buy additional test packs if/when you need more.
+  Test your bandwidth speed natively on macOS Sierra without giving away your test data to third party data farms.
 </div>
 
 <div class="description">
-  Run accurate and realistic speed tests (<a href="faq#why-are-the-results-often-slower-than-other-speed-testing-services">FAQ</a>) without compromising your data. All test results are fully encrypted and never transmitted to third parties over the network (<a href="privacy">Privacy</a>).
+  Run accurate and realistic speed tests without compromising your data. All test results are fully encrypted and never transmitted to third parties over the network (<a href="privacy">Privacy</a>).
 </div>
 
-<a class="download-button" href="{{ site.data.presskit.appstore_url }}">
-  <img src="/images/appstore.svg" alt="">
-</a>
+<p class="main-container">
+  <a href="https://rink.hockeyapp.net/apps/bd76374767734e51a63ac05b892890db" class="button">Download 3.0 Beta</a>
+</p>

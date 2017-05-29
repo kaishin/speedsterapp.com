@@ -14,7 +14,7 @@ img {
 }
 
 a {
-  color: $orange;
+  color: $brink;
 }
 
 hr {
@@ -71,25 +71,28 @@ header {
 }
 
 .screenshot {
-  border-radius: 10px;
-  margin-top: 1em;
+  border-radius: 6px;
+  margin-top: 1em auto auto;
+  max-width: 400px;
 }
 
 .main-title {
   font-size: 3em;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 
   .description {
-    color: lighten($background-color, 30%);
     letter-spacing: 0.04em;
   }
 }
 
 .description {
+  color: lighten($background-color, 60%);
   font-size: 1rem;
-  font-weight: 300;
-  margin-top: 0.2em;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 1rem auto auto;
+  max-width: 20rem;
 
   @include media-width(until, 320px) {
     font-size: 0.8rem;
@@ -98,7 +101,7 @@ header {
 
 main {
   @extend %container;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.5;
 
@@ -114,6 +117,10 @@ main {
 
   em {
     text-decoration: underline;
+  }
+
+  .main-container {
+    text-align: center;
   }
 }
 

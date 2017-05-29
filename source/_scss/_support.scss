@@ -85,21 +85,3 @@ select {
   margin: auto;
   max-width: 400px;
 }
-
-[type=submit] {
-  @extend %button;
-  @include button($action-color);
-  border-radius: 2rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  width: 100%;
-}
-
-.button {
-  @extend [type=submit];
-  display: inline-block;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  text-align: center;
-  width: auto;
-}
