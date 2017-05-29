@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://speedsterapp.com/sitemap.xml
+Sitemap: localhost:4000/sitemap.xml
