@@ -11,7 +11,7 @@ layout: default
 </div>
 
 <div class="description">
-  Run accurate and realistic speed tests without compromising your data. All test results are fully encrypted and never transmitted to third parties over the network (<a href="privacy">Privacy</a>).
+  Supports <em>multiple units</em>, <em>CSV export</em>, <em>max and average speeds</em>, <em>history graph</em>, and <em>result sharing</em> using the system share sheet. No test results are transmitted to third parties (<a href="privacy">Privacy</a>).
 </div>
 
 <p class="main-container">
